@@ -1,0 +1,10 @@
+name: astrbot_plugin_keyword_watch
+display_name: 群关键词自助提醒
+short_desc: 群成员自己发指令订阅关键词，群消息命中后机器人私聊提醒本人。
+desc: 任何群成员都能用「/设置关键词提醒 关键词」为自己订阅关注词，之后该群消息命中就会私聊提醒本人。关键词只在设置它的群生效，支持纯文本和 /正则/ 两种写法，并提供查看、删除、清空等自助指令。订阅数据持久化保存，重启不丢。
+version: 1.0.0
+author: MikatoMisaka
+repo: https://github.com/MikatoMisaka/astrbot_plugin_keyword_watch
+support_platforms:
+  - aiocqhttp
+astrbot_version: ">=4.9.2"

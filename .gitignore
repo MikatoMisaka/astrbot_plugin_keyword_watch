@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*.so
+
+.venv/
+venv/
+env/
+
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# 插件运行时数据（正常应在 AstrBot/data/plugin_data 下）
+subscriptions.json
+subscriptions.broken.*.json
+*.tmp

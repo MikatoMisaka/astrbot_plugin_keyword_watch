@@ -1,0 +1,9 @@
+# 统一换行符，避免 Windows 下提交后又在 Linux 部署时出现全文件 diff
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.py text eol=lf
+*.json text eol=lf
+*.yaml text eol=lf
+*.md text eol=lf

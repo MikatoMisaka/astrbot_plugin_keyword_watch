@@ -1,0 +1,101 @@
+{
+  "enabled": {
+    "description": "插件总开关",
+    "type": "bool",
+    "default": true,
+    "hint": "关闭后不再监听群消息，已有的订阅数据保留"
+  },
+  "max_keywords_per_user": {
+    "description": "每人每群最多订阅数",
+    "type": "int",
+    "default": 20,
+    "hint": "防止有人刷订阅。填 0 或负数按 1 处理",
+    "slider": {
+      "min": 1,
+      "max": 100,
+      "step": 1
+    }
+  },
+  "max_keyword_length": {
+    "description": "关键词最大长度",
+    "type": "int",
+    "default": 50,
+    "hint": "单个关键词（或正则表达式）允许的最大字符数",
+    "slider": {
+      "min": 5,
+      "max": 200,
+      "step": 5
+    }
+  },
+  "cooldown": {
+    "description": "通知冷却（秒）",
+    "type": "int",
+    "default": 60,
+    "hint": "同一个人在同一群，多少秒内最多收到一条提醒，防止刷屏。填 0 表示不限制",
+    "slider": {
+      "min": 0,
+      "max": 600,
+      "step": 10
+    }
+  },
+  "notify_template": {
+    "description": "提醒消息模板",
+    "type": "text",
+    "default": "【关键词提醒】\n群：{group_name}（{group}）\n发送人：{sender}（{sender_id}）\n时间：{time}\n命中：{keywords}\n内容：{text}",
+    "hint": "可用变量：{text} {sender} {sender_id} {group} {group_name} {time} {keywords} {keyword}",
+    "editor_mode": true,
+    "editor_language": "markdown"
+  },
+  "reply_in_group": {
+    "description": "在群里回执",
+    "type": "bool",
+    "default": true,
+    "hint": "用户发指令后在群里回一句简短确认。关闭后只在私聊回执，群里保持安静"
+  },
+  "send_confirm_dm": {
+    "description": "私聊确认设置结果",
+    "type": "bool",
+    "default": true,
+    "hint": "设置关键词后私聊用户一条确认，顺便验证私聊通道是否通畅（推荐开启）"
+  },
+  "skip_commands": {
+    "description": "跳过指令消息",
+    "type": "bool",
+    "default": true,
+    "hint": "以指令前缀开头的消息不参与关键词匹配，避免 /设置关键词提醒 紧急 立刻提醒订阅了「紧急」的人"
+  },
+  "command_prefix": {
+    "description": "指令前缀",
+    "type": "string",
+    "default": "/",
+    "hint": "判断「跳过指令消息」时使用的前缀"
+  },
+  "notify_self": {
+    "description": "自己也提醒",
+    "type": "bool",
+    "default": false,
+    "hint": "关闭时，自己发的消息命中自己的关键词不会提醒自己"
+  },
+  "timezone_offset": {
+    "description": "时区偏移",
+    "type": "float",
+    "default": 8.0,
+    "hint": "模板中 {time} 使用的时区，东八区填 8",
+    "slider": {
+      "min": -12,
+      "max": 14,
+      "step": 0.5
+    }
+  },
+  "max_content_length": {
+    "description": "单条提醒最大长度",
+    "type": "int",
+    "default": 1500,
+    "hint": "渲染后的字符数超过此值会被截断，避免超出协议端消息长度限制。填 0 表示不限制",
+    "slider": {
+      "min": 0,
+      "max": 4000,
+      "step": 100
+    }
+  }
+}
